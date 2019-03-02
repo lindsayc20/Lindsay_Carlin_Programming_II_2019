@@ -14,11 +14,9 @@ with open('dictionary.txt') as f:
 for word in word_list:
     char_list.append(len(word))
 max_letters = max(char_list)
-print("The longest word in the dictionary has", max_letters, "letters.")
 for i in word_list:
     if len(i) == 28:
-        print("The longest word in the dictionary is", i)
-
+        print("The longest word in the dictionary is", i + ". It has", max_letters, "letters.")
 
 #2.  (8pts)  Write code which finds
 # The total word count AND average word length
@@ -35,15 +33,12 @@ word_list = []
 for word in alice_in_wonderland:
     words = split_line(word.strip())
     for word in words:
-        print(word)
         word_list.append(word)
 lens_words = []
 for word in word_list:
     lens_words.append(len(word))
-print(word_list)
 
-print("There are", len(word_list), "words in 'Alice in Wonderland'")
-print("The average word in 'Alice in Wonderland is", sum(lens_words)/len(lens_words), "letters long.")
+print("There are", len(word_list), "words in 'Alice in Wonderland'. The average word in 'Alice in Wonderland is", sum(lens_words)/len(lens_words), "letters long.")
 
 # CHOOSE ONE OF THE FOLLOWING TWO PROBLEMS
 
@@ -62,9 +57,9 @@ for i in range(len(word_list)):
     if word_list[i].upper() == "CHESHIRE" and word_list[i + 1].upper() == "CAT":
         cheshire_cat_counter += 1
 
-print(cheshire_counter)
-print(cat_counter)
-print(cheshire_cat_counter)
+print("The word 'cheshire' appears", cheshire_counter, "times.")
+print("The word 'cat' appears", cat_counter, "times.")
+print("The phrase 'cheshire cat' appears", cheshire_cat_counter, "times.")
 
 #### OR #####
 
