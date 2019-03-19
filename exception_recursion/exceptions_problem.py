@@ -14,3 +14,22 @@
 # (3pts) keeps asking for inputs until they are valid (see while loop from notes)
 # (4pts) calculate the force of gravity in Newtons and print the result to the user in scientific notation to two decimals.
 
+def force_of_gravity():
+    m1 = int(input("Enter the mass of the first object: "))
+    m2 = int(input("Enter the mass of the second object: "))
+    r = int(input("Enter the distance between the two objects: "))
+    done = False
+    G = 6.67e-11
+    while not done:
+        try:
+            F = G * (m1 * m2) / r**2
+            done = True
+        except ZeroDivisionError:
+            print("Cannot divide by 0")
+            force_of_gravity()
+        except ValueError:
+            print("Please enter valid numbers")
+            force_of_gravity()
+    print("{:.2e}".format(F))
+
+force_of_gravity()
