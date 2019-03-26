@@ -17,7 +17,7 @@ my_turtle.penup()
 my_turtle.pendown()
 my_turtle.goto(0, 0)
 my_turtle.setheading(180)
-
+'''
 def draw_h(length, depth):
 
     if depth > 0:
@@ -55,9 +55,9 @@ def draw_h(length, depth):
         my_turtle.left(90)
         my_turtle.forward(length / 2)
 
-draw_h(250, 4)
+draw_h(250, 5)
 
-
+'''
 #2)  Using the turtle library, create any of the other recursive patterns in the data folder. 
 #  Challenge yourself to match your pattern as closely as you can to the image.  (10pts)
 #  Note:  The Koch snowflake shows step by step building of the fractal.  
