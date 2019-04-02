@@ -95,6 +95,6 @@ plt.annotate(schools_list[francis_parker], xy=(square_footage[francis_parker], g
 m, b = np.polyfit(square_footage, ghg_emissions, 1)
 fit_x = [0, 700000]
 fit_y = [b, 16000]
-plt.plot(fit_x, fit_y, color="blue")
+plt.plot(fit_x, fit_y, color="black")
 
 plt.show()
