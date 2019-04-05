@@ -6,3 +6,23 @@
 # Print the tweets in a nicely formatted way.
 # Have fun.  Again, nothing explicit.
 
+from bs4 import BeautifulSoup
+import requests
+
+url = "https://twitter.com/moonpie"  # uniform resource locator
+
+page = requests.get(url)
+
+soup = BeautifulSoup(page.text, "html.parser")
+
+# by css class
+tweet = soup.findAll(class_="tweet-text")
+tweets = []
+for i in tweet:
+    tweets.append(i.text)
+
+print("@MoonPie's five most recent tweets")
+
+for i in range(5):
+    print("Tweet number", i + 1)
+    print(tweets[i])
