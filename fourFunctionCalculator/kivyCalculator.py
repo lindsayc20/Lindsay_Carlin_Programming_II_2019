@@ -1,6 +1,3 @@
-# Kivy Four Function calculator (35pts)
-# emulate the built in MACOS calculator app as best you can.
-
 # GENERAL LAYOUT (10pts)
 # Make a GridLayout with 6 rows
 # Place a text input for the display in the first row

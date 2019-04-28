@@ -21,5 +21,21 @@
 # -answer is formatted in scientific notation to two decimals (2pts)
 # -layout is formatted in a meaningful way to make application user friendly and attractive (3pts)   
 
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.core.window import Window
 
+Window.size = (300, 400)
 
+class GravityApp(App):
+    def build(self):
+        return GravityLayout()
+
+class GravityLayout(BoxLayout):
+    def calculate(self):
+        answer = eval()
+        self.display.text = str(answer)
+
+if __name__ == "__main__":
+    app = GravityApp()
+    app.run()

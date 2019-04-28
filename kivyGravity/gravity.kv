@@ -1,0 +1,47 @@
+<CustBoxLayout@BoxLayout>:
+    size_hint_y: 1
+    spacing: 1
+
+<CustLabel@Label>:
+    font_size: 40
+
+<CustButton@Button>:
+    font_size: 30
+    background_normal: ""
+    background_down: ""
+    background_color: 0.85, 0.85, 0.85, 1
+    color: 0, 0, 0, 1
+
+<GravityLayout>:
+    CustBoxLayout:
+        CustLabel:
+            orientation: "vertical"
+            spacing: 1
+            TextInput:
+                id: m1
+                font_size: 75
+                background_normal: ""
+                background_color: 0.5, 0.5, 0.5, 1
+
+        CustLabel:
+            orientation: "vertical"
+            spacing: 1
+            TextInput:
+                id: m2
+                font_size: 75
+                background_normal: ""
+                background_color: 0.5, 0.5, 0.5, 1
+
+        CustLabel:
+            orientation: "vertical"
+            spacing: 1
+            TextInput:
+                id: radius
+                font_size: 75
+                background_normal: ""
+                background_color: 0.5, 0.5, 0.5, 1
+
+        CustBoxLayout:
+            CustButton:
+                text: "Calculate"
+                on_press: root.calculate(display.text)
