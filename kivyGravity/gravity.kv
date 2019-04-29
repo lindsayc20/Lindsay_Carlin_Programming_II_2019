@@ -6,42 +6,79 @@
     font_size: 40
 
 <CustButton@Button>:
-    font_size: 30
-    background_normal: ""
-    background_down: ""
+    font_size: 20
     background_color: 0.85, 0.85, 0.85, 1
     color: 0, 0, 0, 1
 
 <GravityLayout>:
-    CustBoxLayout:
-        CustLabel:
+    orientation: "vertical"
+    spacing: 1
+    id: layout
+    m1: _m1
+    m2: _m2
+    radius: _radius
+    gravity: _gravity
+
+    Label:
+        text: "Universal Gravity Calculator"
+        font_size: 20
+        background_normal: ""
+        background_color: 0.5, 0.5, 0.5, 1
+        size_hint_y: 0.5
+
+    BoxLayout:
+
+        Label:
+            text: "Mass of object 1 (kilograms)"
+            font_size: 20
+            spacing: 5
             orientation: "vertical"
             spacing: 1
-            TextInput:
-                id: m1
+
+        Label:
+            text: "Mass of object 2 (kilograms)"
+            font_size: 20
+            spacing: 5
+            orientation: "vertical"
+            spacing: 1
+
+        Label:
+            text: "Radius (meters)"
+            font_size: 20
+            spacing: 5
+            orientation: "vertical"
+            spacing: 1
+
+    BoxLayout:
+
+        TextInput:
+                id: _m1
+                font_size: 20
+                background_normal: ""
+                background_color: 0.5, 0.5, 0.5, 1
+                input_filter: "float"
+
+        TextInput:
+                id: _m2
+                font_size: 20
+                background_normal: ""
+                background_color: 0.5, 0.5, 0.5, 1
+                input_filter: "float"
+
+        TextInput:
+                id: _radius
                 font_size: 75
                 background_normal: ""
                 background_color: 0.5, 0.5, 0.5, 1
+                input_filter: "float"
 
-        CustLabel:
-            orientation: "vertical"
-            spacing: 1
-            TextInput:
-                id: m2
-                font_size: 75
-                background_normal: ""
-                background_color: 0.5, 0.5, 0.5, 1
+        BoxLayout:
 
-        CustLabel:
-            orientation: "vertical"
-            spacing: 1
-            TextInput:
-                id: radius
-                font_size: 75
-                background_normal: ""
-                background_color: 0.5, 0.5, 0.5, 1
-
-        CustBoxLayout:
-            CustButton:
+            Button:
                 text: "Calculate"
-                on_press: root.calculate(display.text)
+                on_press: layout.calculate()
+
+            Label:
+                text: "Gravitational force between the objects"
+                font_size: 20
+                id: _gravity

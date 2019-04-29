@@ -33,8 +33,19 @@ class GravityApp(App):
 
 class GravityLayout(BoxLayout):
     def calculate(self):
-        answer = eval()
-        self.display.text = str(answer)
+        g_constant = 6.67e-11
+        try:
+            m1 = float(self.m1.text)
+            m2 = float(self.m2.text)
+            radius = float(self.radius.text)
+            if m1 == "" or m2 == "" or radius == "":
+                return
+            gravity = g_constant * (m1 * m2) / radius ** 2
+            self.gravity.text = str("{:.2e}".format(gravity)) + str(" Newtons")
+        except ZeroDivisionError:
+            self.gravity.text = "Unable to divide by 0"
+        except ValueError:
+            self.gravity.text = "Input not recognizable"
 
 if __name__ == "__main__":
     app = GravityApp()
