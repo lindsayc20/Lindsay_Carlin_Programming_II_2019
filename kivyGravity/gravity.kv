@@ -3,10 +3,11 @@
     spacing: 1
 
 <CustLabel@Label>:
-    font_size: 40
+    font_size: 50
+    size_hint_x: 1
 
 <CustButton@Button>:
-    font_size: 20
+    font_size: 50
     background_color: 0.85, 0.85, 0.85, 1
     color: 0, 0, 0, 1
 
@@ -21,7 +22,7 @@
 
     Label:
         text: "Universal Gravity Calculator"
-        font_size: 20
+        font_size: 40
         background_normal: ""
         background_color: 0.5, 0.5, 0.5, 1
         size_hint_y: 0.5
@@ -29,56 +30,62 @@
     BoxLayout:
 
         Label:
-            text: "Mass of object 1 (kilograms)"
-            font_size: 20
+            text: "Mass of object\n 1 (kilograms)"
+            font_size: 25
             spacing: 5
             orientation: "vertical"
+            background_color: 0.5, 0.1, 0.5, 1
             spacing: 1
 
         Label:
-            text: "Mass of object 2 (kilograms)"
-            font_size: 20
+            text: "Mass of object\n 2 (kilograms)"
+            font_size: 25
             spacing: 5
             orientation: "vertical"
+            background_color: 0.5, 0.5, 0.1, 1
             spacing: 1
 
         Label:
             text: "Radius (meters)"
-            font_size: 20
+            font_size: 25
             spacing: 5
             orientation: "vertical"
+            background_color: 0.1, 0.5, 0.5, 1
             spacing: 1
 
     BoxLayout:
 
         TextInput:
-                id: _m1
-                font_size: 20
-                background_normal: ""
-                background_color: 0.5, 0.5, 0.5, 1
-                input_filter: "float"
+            id: _m1
+            font_size: 50
+            background_normal: ""
+            background_color: 0.5, 0.1, 0.5, 1
+            input_filter: "float"
+            spacing: 1
 
         TextInput:
-                id: _m2
-                font_size: 20
-                background_normal: ""
-                background_color: 0.5, 0.5, 0.5, 1
-                input_filter: "float"
+            id: _m2
+            font_size: 50
+            background_normal: ""
+            input_filter: "float"
+            background_color: 0.5, 0.5, 0.1, 1
+            spacing: 1
 
         TextInput:
-                id: _radius
-                font_size: 75
-                background_normal: ""
-                background_color: 0.5, 0.5, 0.5, 1
-                input_filter: "float"
+            id: _radius
+            font_size: 50
+            background_normal: ""
+            background_color: 0.1, 0.5, 0.5, 1
+            input_filter: "float"
+            spacing: 1
 
-        BoxLayout:
+    BoxLayout:
 
-            Button:
-                text: "Calculate"
-                on_press: layout.calculate()
+        Button:
+            text: "Calculate"
+            on_press: layout.calculate()
 
-            Label:
-                text: "Gravitational force between the objects"
-                font_size: 20
-                id: _gravity
+        Label:
+            text: "Gravitational force\nbetween the objects:"
+            font_size: 30
+            id: _gravity

@@ -41,7 +41,7 @@ class GravityLayout(BoxLayout):
             if m1 == "" or m2 == "" or radius == "":
                 return
             gravity = g_constant * (m1 * m2) / radius ** 2
-            self.gravity.text = str("{:.2e}".format(gravity)) + str(" Newtons")
+            self.gravity.text = "Gravitational force\nbetween the objects:\n" + str("{:.2e}".format(gravity)) + str(" Newtons")
         except ZeroDivisionError:
             self.gravity.text = "Unable to divide by 0"
         except ValueError:
