@@ -1,4 +1,4 @@
-# kivy Universal Gravity Calculator (30pts)
+# kivy universal gravity calculator (30pts)
 
 # When we learned about exceptions, I asked you to make a Universal Gravity calculator
 
