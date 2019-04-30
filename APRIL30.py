@@ -30,14 +30,6 @@ Surprisingly, there are palindromic numbers that are themselves Lychrel numbers;
 How many Lychrel numbers are there below ten-thousand?
 '''
 
-# STEPS
-# iterate through each number 10 through 10,000
-# add the number to its reverse
-# check to see if the number is the same forwards and backwards
-# if so, move to next number
-# if not, add again up to 50 times
-# make a list of all Lychrel numbers and print length of list
-
 '''
 PROBLEM 2 
 The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
@@ -56,6 +48,7 @@ For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
 
 There exists exactly one Pythagorean triplet for which a + b + c = 1000.  What is it?
 '''
+
 done = False
 while not done:
     a = random.randrange(1, 1000)
@@ -64,4 +57,3 @@ while not done:
     if math.sqrt(a ** 2 + b ** 2) == c and a + b + c == 1000 and a > b:
         print("a = " + str(a), "b = " + str(b), " c = " + str(c))
         done = True
-
