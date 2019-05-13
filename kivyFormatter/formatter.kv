@@ -1,0 +1,153 @@
+<CustBoxLayout@BoxLayout>:
+    size_hint_y: 1
+    spacing: 1
+
+<CustButton@Button>:
+    font_size: 30
+    background_normal: ""
+    background_down: ""
+    background_color: 0.85, 0.85, 0.85, 1
+    color: 0, 0, 0, 1
+
+<CustLabel@Label>:
+    font_size: 30
+    background_normal: ""
+    background_down: ""
+    background_color: 0.85, 0.85, 0.85, 1
+    color: 0, 0, 0, 1
+
+<FormatterLayout>:
+    orientation: "vertical"
+    rows: 3
+    background_color: 1, 1, 1, 1
+    switch_text: switch_text
+    r_value: r_value
+    g_value: g_value
+    b_value: b_value
+    spin_label: spin_label
+    radio_label: radio_label
+    prog1: prog1
+    prog2: prog2
+    physcomp: physcomp
+
+    BoxLayout:
+        rows: 1
+        orientation: "horizontal"
+        size_hint_x: 1
+        size_hint_y: 1
+
+        Label:
+            id: r_value
+            color: 0, 0, 0, 1
+            text: "Red value: " + "{:.2f}".format(slider1.value)
+            value: slider1.value
+
+        Slider:
+            orientation: "horizontal"
+            id: slider1
+            min: 0
+            max: 1
+            step: 0.01
+            value: 1
+            on_value: root.color_slide(self.value, root.g_value.value, root.b_value.value)
+    BoxLayout:
+        rows: 1
+        orientation: "horizontal"
+        size_hint_x: 1
+        size_hint_y: 1
+
+        Label:
+            id: g_value
+            color: 0, 0, 0, 1
+            text: "Green value: " + "{:.2f}".format(slider2.value)
+            value: slider2.value
+
+        Slider:
+            orientation: "horizontal"
+            id: slider2
+            min: 0
+            max: 1
+            step: 0.01
+            value: 1
+            on_value: root.color_slide(root.r_value.value, self.value, root.b_value.value)
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_x: 1
+        size_hint_y: 1
+        rows: 1
+
+        Label:
+            id: b_value
+            color: 0, 0, 0, 1
+            text: "Blue value: " "{:.2f}".format(slider3.value)
+            value: slider3.value
+
+        Slider:
+            orientation: "horizontal"
+            id: slider3
+            min: 0
+            max: 1
+            step: 0.01
+            value: 1
+            on_value: root.color_slide(root.r_value.value, root.g_value.value, self.value)
+
+    BoxLayout:
+        orientation: "horizontal"
+
+        Label:
+            id: spin_label
+            text: "font choice"
+            font_name: "Arial.ttf"
+            color: 0, 0, 0, 1
+        Spinner:
+            id: spin
+            text: "Arial.ttf"
+            values: ["Arial.ttf", "Hoefler Text copy.ttc"]
+            on_text: root.spin_label.font_name = self.text
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_x: 0.5
+        Label:
+            id: switch_text
+            text: "My switch"
+            color: 0, 0, 0, 1
+        Switch:
+            id: my_switch
+            on_active: root.font_color(self.active)
+
+    BoxLayout:
+        orientation: "horizontal"
+
+        Label:
+            id: radio_label
+            color: 0, 0, 0, 1
+            text: "Choose your favorite Computer Science class"
+
+    BoxLayout:
+        orientation: "horizontal"
+
+        Label:
+            id: prog1
+            color: 0, 0, 0, 1
+            text: "Programming I"
+        CheckBox:
+            group: "radio"
+            on_active: root.radio_label.text = root.prog1.text
+
+        Label:
+            id: prog2
+            color: 0, 0, 0, 1
+            text: "Programming II"
+        CheckBox:
+            group: "radio"
+            on_active: root.radio_label.text = root.prog2.text
+
+        Label:
+            id: physcomp
+            color: 0, 0, 0, 1
+            text: "Physical Computing"
+        CheckBox:
+            group: "radio"
+            on_active: root.radio_label.text = root.physcomp.text
