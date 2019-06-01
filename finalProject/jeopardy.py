@@ -74,13 +74,14 @@ for i in range(len(question_list)):
     print(question_list[i].strip())
         # print("Correct", answers[i])
         # print("Incorrect", incorrect[i])
-'''
+
 for i in range(len(master_question_list)):
     for j in range(5):
         print(master_question_list[i][j])
         print(master_answer_list[i][j])
         print(master_incorrect_list[i][j])
         print(new_answer_choices[i][j])
+'''
 
  # print(len(master_question_list))
 class ScreenManagement(ScreenManager):
@@ -98,8 +99,8 @@ class ScreenManagement(ScreenManager):
     def shuffle_choices(self, column, row):
         self.choices = new_answer_choices[column][row]
         # print(self.choices)
-        print(column)
-        print(master_answer_list[column])
+        # print(column)
+        # print(master_answer_list[column])
         random.shuffle(self.choices)
         self.choice0 = self.choices[0]
         self.choice1 = self.choices[1]
@@ -111,7 +112,7 @@ class ScreenManagement(ScreenManager):
         return self.col
     def get_choice(self, choice):
         self.choice = self.choices[choice]
-        print(self.choices)
+        # print(self.choices)
         # print(master_answer_list)
         # print(self.choices)
         if self.choice in master_answer_list[self.col]:
