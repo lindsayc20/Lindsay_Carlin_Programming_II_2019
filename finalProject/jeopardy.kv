@@ -1,0 +1,596 @@
+# http://www.j-archive.com/showgame.php?game_id=6288
+
+<CustButton@Button>:
+    font_size: 40
+    font_name: "Arial"
+    size_hint_y: 1
+    font_color: 1, 1, 1, 1
+
+<CustLabel@Label>:
+    font_color: 1, 1, 1, 1
+    font_size: 40
+    text_size: self.size
+
+<ScreenManagement>:
+    question: ""
+    answer: ""
+    choice0: ""
+    choice1: ""
+    choice2: ""
+    choice3: ""
+    right_choice: False
+    # money: 0
+
+    WelcomeScreen:
+
+        orientation: "horizontal"
+        name: "welcome_screen"
+        id: welcome_screen
+
+        BoxLayout:
+            orientation: "vertical"
+
+            Image:
+                id: image
+                source: 'jeopardylogo.png'
+                allow_stretch: True
+
+            Button:
+                background_color: 0, 0, 1, 1
+                text: "Welcome to Jeopardy! Click to play."
+                on_release: app.root.current = "category_screen"
+
+    CategoryScreen:
+
+        orientation: "horizontal"
+        background_color: 0, 0, 0, 1
+        name: "category_screen"
+        id: category_screen
+
+        BoxLayout:
+            orientation: "horizontal"
+
+            BoxLayout:
+                orientation: "vertical"
+
+                Label:
+                    text: root.chosen_categories[0]
+                    text_size: self.size
+                    halign: "center"
+                    valign: "center"
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 0
+                    column: 0
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 1
+                    column: 0
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 2
+                    column: 0
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 3
+                    column: 0
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 4
+                    column: 0
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+            BoxLayout:
+                orientation: "vertical"
+
+                Label:
+                    text: root.chosen_categories[1]
+                    text_size: self.size
+                    halign: "center"
+                    valign: "center"
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 0
+                    column: 1
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 1
+                    column: 1
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 2
+                    column: 1
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 3
+                    column: 1
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    text: "1000"
+                    row: 4
+                    column: 1
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+            BoxLayout:
+                orientation: "vertical"
+
+                Label:
+                    text: root.chosen_categories[2]
+                    text_size: self.size
+                    halign: "center"
+                    valign: "center"
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 0
+                    column: 2
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 1
+                    column: 2
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 2
+                    column: 2
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 3
+                    column: 2
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 4
+                    column: 2
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+            BoxLayout:
+                orientation: "vertical"
+
+                Label:
+                    text: root.chosen_categories[3]
+                    text_size: self.size
+                    halign: "center"
+                    valign: "center"
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 0
+                    column: 3
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 1
+                    column: 3
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 2
+                    column: 3
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 3
+                    column: 3
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 4
+                    column: 3
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+            BoxLayout:
+                orientation: "vertical"
+
+                Label:
+                    text: root.chosen_categories[4]
+                    text_size: self.size
+                    halign: "center"
+                    valign: "center"
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 0
+                    column: 4
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 1
+                    column: 4
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 2
+                    column: 4
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 3
+                    column: 4
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 4
+                    column: 4
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+            BoxLayout:
+                orientation: "vertical"
+
+                Label:
+                    text: root.chosen_categories[5]
+                    text_size: self.size
+                    halign: "center"
+                    valign: "center"
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 0
+                    column: 5
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 1
+                    column: 5
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 2
+                    column: 5
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 3
+                    column: 5
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+                Button:
+                    background_color: 0, 0, 1, 1
+                    row: 4
+                    column: 5
+                    text: str(root.get_amount(self.row))
+                    on_release:
+                        app.root.current = "question_screen"
+                        root.get_question(self.column, self.row)
+                        root.get_answer(self.column, self.row)
+                        root.get_incorrect(self.column, self.row)
+                        root.shuffle_choices(self.column, self.row)
+                        root.get_column(self.column)
+                        self.disabled = True
+
+    QuestionScreen:
+        orientation: "horizontal"
+        background_color: 0, 0, 0, 1
+        name: "question_screen"
+
+        BoxLayout:
+
+            Label:
+                text: root.question
+
+        BoxLayout:
+
+            Button:
+                size_hint_y: 1/3
+                text: root.choice0
+                text_size: self.size
+                halign: 'center'
+                valign: 'center'
+                on_release: app.root.current = "answer_screen"
+                choice: 0
+                column: self.column
+                on_release: root.get_choice(self.choice)
+
+            Button:
+                size_hint_y: 1/3
+                text: root.choice1
+                text_size: self.size
+                halign: 'center'
+                valign: 'center'
+                on_release: app.root.current = "answer_screen"
+                choice: 1
+                column: self.column
+                on_release: root.get_choice(self.choice)
+
+            Button:
+                size_hint_y: 1/3
+                text: root.choice2
+                text_size: self.size
+                halign: 'center'
+                valign: 'center'
+                on_release: app.root.current = "answer_screen"
+                choice: 2
+                column: self.column
+                on_release: root.get_choice(self.choice)
+
+            Button:
+                size_hint_y: 1/3
+                text: root.choice3
+                text_size: self.size
+                halign: 'center'
+                valign: 'center'
+                on_release: app.root.current = "answer_screen"
+                choice: 3
+                column: self.column
+                on_release:
+                    root.get_choice(self.choice)
+
+    AnswerScreen:
+        background_color: 0, 0, 1, 1
+        name: "answer_screen"
+
+        BoxLayout:
+            orientation: "vertical"
+
+            Label:
+                text: "Correct!" if root.right_choice == True else 'Incorrect!'
+                # text: "Your winnings: " + money
+
+            Button:
+                text: "Click to play another question!"
+                text_size: self.size
+                size_hint_y: 1/3
+                halign: "center"
+                valign: "center"
+                on_release: app.root.current = "category_screen"
