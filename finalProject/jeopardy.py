@@ -8,8 +8,6 @@ import random
 import sys
 from html2text import html2text
 
-# see if there is another transition that is better
-
 Window.size = (600, 400)
 
 categories = [str(x) for x in range(9, 33)]
