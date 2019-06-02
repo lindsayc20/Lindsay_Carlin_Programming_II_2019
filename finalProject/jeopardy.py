@@ -172,5 +172,3 @@ class JeopardyApp(App):
 if __name__=="__main__":
     app = JeopardyApp()
     app.run()
-
-# need score change
