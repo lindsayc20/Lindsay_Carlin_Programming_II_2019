@@ -165,6 +165,9 @@ class AnswerScreen(Screen):
 class ScoreScreen(Screen):
     layout = BoxLayout()
 
+class ExitScreen(Screen):
+    layout = BoxLayout()
+
 class JeopardyApp(App):
     def build(self):
         return ScreenManagement()
