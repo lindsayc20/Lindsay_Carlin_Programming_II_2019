@@ -89,11 +89,11 @@ class ScreenManagement(ScreenManager):
     money = 0
     def build(self):
         return JeopardyLayout()
+    def get_question(self, column, row):
+        self.question = master_question_list[column][row]
     def get_amount(self, row):
         self.amount = (row + 1) * 200
         return self.amount
-    def get_question(self, column, row):
-        self.question = master_question_list[column][row]
     def shuffle_choices(self, column, row):
         self.choices = new_answer_choices[column][row]
         # print(self.choices)
@@ -108,15 +108,24 @@ class ScreenManagement(ScreenManager):
     def get_column(self, column):
         self.col = column
         return self.col
-    def get_choice(self, choice):
+    def get_row(self, row):
+        self.row = row
+        return self.row
+    def get_choice(self, choice, row):
         self.choice = self.choices[choice]
         # print(self.choices)
         # print(master_answer_list)
         # print(self.choices)
+        self.amount = (self.row + 1) * 200
+        print(self.amount)
         if self.choice in master_answer_list[self.col]:
             self.right_choice = True
+        else:
+            self.right_choice = False
+            self.amount *= -1
         # print(self.choice, self.right_choice)
-        return self.right_choice
+        self.money += self.amount
+        return self.right_choice, self.money, self.amount
     def get_incorrect(self, column, row):
         self.incorrect0 = master_incorrect_list[column][row][0]
         self.incorrect1 = master_incorrect_list[column][row][1]
@@ -126,7 +135,6 @@ class ScreenManagement(ScreenManager):
     def get_answer(self, column, row):
         self.answer = master_answer_list[column][row]
         return self.answer
-    # def score_change(self):
 
 class JeopardyLayout(BoxLayout):
     pass
@@ -152,6 +160,9 @@ class QuestionScreen(Screen):
         master_question_list = master_question_list
 
 class AnswerScreen(Screen):
+    layout = BoxLayout()
+
+class ScoreScreen(Screen):
     layout = BoxLayout()
 
 class JeopardyApp(App):

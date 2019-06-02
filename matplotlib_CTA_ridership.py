@@ -13,11 +13,11 @@ import matplotlib.ticker as ticker
 #4  Add a title and label your axes. (5pts)
 #5  Add a legend to show data represented by each of the three lines. (5pts)
 
-plt.figure(1)   # create a new window
+plt.figure(1)
 
 with open("/Users/lindsaycarlin/Desktop/Programming/Programming II 2019/Notes/data/CTA_-_Ridership_-_Annual_Boarding_Totals.csv") as f:
-    reader = csv.reader(f)   # make a reader object to pull in the data
-    data = list(reader)     # cast the reader as a list
+    reader = csv.reader(f)
+    data = list(reader)
 
 headers = data.pop(0)
 print(headers)
