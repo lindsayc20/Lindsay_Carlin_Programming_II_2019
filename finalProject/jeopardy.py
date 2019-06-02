@@ -117,7 +117,7 @@ class ScreenManagement(ScreenManager):
         # print(master_answer_list)
         # print(self.choices)
         self.amount = (self.row + 1) * 200
-        print(self.amount)
+        # print(self.amount)
         if self.choice in master_answer_list[self.col]:
             self.right_choice = True
         else:
